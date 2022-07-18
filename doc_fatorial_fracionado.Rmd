@@ -10,7 +10,61 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introdução
 
-# Fatorial 2 completo
+## Esquema Fatorial
+
+\quad O esquema fatorial consiste na analise de um ou mais fatores de tratamentos, ou seja, todas as possiveis combinações dos níveis dos fatores são testadas. Por ecemplo, se temos um fator A com dois níveis e um fator B com 4 níveis, teremos 2 x 4 = 8 combinações a serem testadas, assim as combinações passam a ser os tratamentos.
+
+\quad Para exemplificar melhor, considere um processo de usinagem, onde desaja-se verificar o efeito do avanço, profundidade de corte e geometria da ferramenta na rugorisade superficial. Para realização do exeprimento, foi considerado três níveis para o avanço ($A_1$,$A_2$,$A_3$), 2 níveis para a profundidade do corte ($B_1$,$B_2$) e dois níveis para a geometria da ferramenta ($C_1$, $C_2$), Carpinet (2009, pag. 108).
+
+\quad Em um exeperimento fatorial completo são realizadas todas as possiveis combinações dos nívies dos fatores. No exemplo, temos 3 x 2 x 2 = 12 combinações de teste, conforme segue na tabela.
+
+\begin{table}
+  \begin{center}
+  \caption{Combinações de teste de um experimento fatoria 3x2}
+    \begin{tabular}{ l  r  }
+      A_1 B_1 C_1 & A_1 B_1 C_2\\
+      A_1 B_2 C_1 & A_1 B_2 C_2\\
+      A_2 B_1 C_1 & A_2 B_1 C_2\\
+      A_2 B_2 C_1 & A_2 B_2 C_2\\
+      A_3 B_1 C_1 & A_3 B_1 C_2\\
+      A_3 B_2 C_1 & A_3 B_2 C_2\\
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\quad No geral, quando deseja-se estudar os efeitos dos fatores, planejamentos fatoriais são mais eficientes. Generalizando o exemplo anterior, considere agora que temos um fator A com $a$ níveis, um fator B com $b$ níveis e um fator C com $c$ níveis, teremos abc combinações, sendo assim cada réplica ira conter todas as abc combinações de tratamentos. Em um esquema fatorial os fatores são ditos cruzados, quando são dispostos. 
+
+\quad O efeito de um fator é definido como a mudança no valor observado da variável resposta quando o muda-se o nível do fator. Geralmente chamado de efeito principal, refere-se aos fatores primários de interesse no experimento. 
+
+# Esquema Fatorial 2x2 Completo
+
+\quad Considerado como o esquema fatorial mais simples, envolvendo somente dois fatores A e B, tendo cada um desses dois fatores um número de níveis a ser testado, consideramos $a$ níveis para o fator A e $b$ níveis para o fator B. Assim, termos ab comibinações no experimento. Nesse tipo de experimento, podemos testar:
+
+\begin{itemize}
+  \item a resposta é alterada significativamente quando o nível do fator A é alterado;
+  \item a resposta é alterada significativamente quando o nível do fator B é alterado;
+  \item a alteração na resposta quando da alteração do nível do fator A (ou B) é dependente do nível do fator B (ou A), ou seja, se existe efeito de interação entre os dois fatores.
+\end{itemize}
+
+\quad Assim, considerando um delineamento inteiramente casualizado com $n$ repetições, os dois fatores A com $a$ níveis e B com $b$, o modelo estatístico é dado por:
+
+\begin{equation}
+  \begin{center}
+    
+    y_{ikj} = \mu + \alpha_i + \gamma_j + (\alpha\gamma)_{ik} + \epsilon_{ikj}
+    
+  \end{center}
+\end{equation}
+
+onde:
+
+\begin{itemize}
+  \item $\mu$ é a média geral
+  \item $\alpha_i$ é o efeito o i-ésimo nível do fator A, i = 1,...,$a$
+  \item $\gamma_j$ é o efeito do j-ésimo nível do fator B, j = 1,...,$b$
+  \item $(\alpha\gamma)_{ij}$ é o efeito da interação entres os fatores A e B
+  \item $\epsilon_{ijk}$ é o erro experimental
+\end{itemize}
 
 # Fatorial 2 1/2 fração
 
