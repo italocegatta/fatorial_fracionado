@@ -1,29 +1,28 @@
 ---
-title: "Fatorial fracionado"
+title: "Experimento Fatorial Fracionado"
 output: html_document
-date: '2022-07-17'
+date: '2022-07-20'
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+# Introdução
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+# Fatorial 2 completo
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+# Fatorial 2 1/2 fração
 
-```{r cars}
-summary(cars)
-```
+# Fatorial 2 1/4 fração
 
-## Including Plots
+# Fatorial 2 ^(k-p)
 
-You can also embed plots, for example:
+# Estrutura do modelo
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+# Estrutura de resolução 3
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+# Exemplo prático
+https://www.youtube.com/watch?v=UGqnRCRV1k8&t=566s&ab_channel=CanaldaEngenhariadeManufaturaeQualidade
+
+
