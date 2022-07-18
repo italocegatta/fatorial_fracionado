@@ -374,7 +374,7 @@ pre code {
 <h2>Esquema Fatorial</h2>
 <p>O esquema fatorial consiste na analise de um ou mais fatores de
 tratamentos, ou seja, todas as possiveis combinações dos níveis dos
-fatores são testadas. Por ecemplo, se temos um fator A com dois níveis e
+fatores são testadas. Por exemplo, se temos um fator A com dois níveis e
 um fator B com 4 níveis, teremos 2 x 4 = 8 combinações a serem testadas,
 assim as combinações passam a ser os tratamentos.</p>
 <p>Para exemplificar melhor, considere um processo de usinagem, onde
@@ -386,6 +386,35 @@ ferramenta (<span class="math inline">\(C_1\)</span>, <span class="math inline">
 <p>Em um exeperimento fatorial completo são realizadas todas as
 possiveis combinações dos nívies dos fatores. No exemplo, temos 3 x 2 x
 2 = 12 combinações de teste, conforme segue na tabela.</p>
+<table>
+<caption>Combinações de teste de um experimento fatorial 3x2</caption>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(A_1 B_1 C_1\)</span></td>
+<td><span class="math inline">\(A_1 B_1 C_2\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A_1 B_2 C_1\)</span></td>
+<td><span class="math inline">\(A_1 B_2 C_2\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A_2 B_1 C_1\)</span></td>
+<td><span class="math inline">\(A_2 B_1 C_2\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A_2 B_2 C_1\)</span></td>
+<td><span class="math inline">\(A_2 B_2 C_2\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A_3 B_1 C_1\)</span></td>
+<td><span class="math inline">\(A_3 B_1 C_2\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A_3 B_2 C_1\)</span></td>
+<td><span class="math inline">\(A_3 B_2 C_2\)</span></td>
+</tr>
+</tbody>
+</table>
 <p>No geral, quando deseja-se estudar os efeitos dos fatores,
 planejamentos fatoriais são mais eficientes. Generalizando o exemplo
 anterior, considere agora que temos um fator A com <span class="math inline">\(a\)</span> níveis, um fator B com <span class="math inline">\(b\)</span> níveis e um fator C com <span class="math inline">\(c\)</span> níveis, teremos abc combinações, sendo
@@ -397,14 +426,22 @@ variável resposta quando o muda-se o nível do fator. Geralmente chamado
 de efeito principal, refere-se aos fatores primários de interesse no
 experimento.</p>
 </div>
-</div>
-<div id="esquema-fatorial-2x2-completo" class="section level1">
-<h1>Esquema Fatorial 2x2 Completo</h1>
+<div id="esquema-fatorial-2x2-completo" class="section level2">
+<h2>Esquema Fatorial 2x2 Completo</h2>
 <p>Considerado como o esquema fatorial mais simples, envolvendo somente
 dois fatores A e B, tendo cada um desses dois fatores um número de
 níveis a ser testado, consideramos <span class="math inline">\(a\)</span> níveis para o fator A e <span class="math inline">\(b\)</span> níveis para o fator B. Assim, termos ab
 comibinações no experimento. Nesse tipo de experimento, podemos
 testar:</p>
+<ul>
+<li>a resposta é alterada significativamente quando o nível do fator A é
+alterado;</li>
+<li>a resposta é alterada significativamente quando o nível do fator B é
+alterado;</li>
+<li>a alteração na resposta quando da alteração do nível do fator A (ou
+B) é dependente do nível do fator B (ou A), ou seja, se existe efeito de
+interação entre os dois fatores.</li>
+</ul>
 <p>Assim, considerando um delineamento inteiramente casualizado com
 <span class="math inline">\(n\)</span> repetições, os dois fatores A com
 <span class="math inline">\(a\)</span> níveis e B com <span class="math inline">\(b\)</span>, o modelo estatístico é dado por:</p>
@@ -423,20 +460,34 @@ da interação entres os fatores A e B</li>
 experimental</li>
 </ul>
 </div>
-<div id="fatorial-2-12-fração" class="section level1">
-<h1>Fatorial 2 1/2 fração</h1>
 </div>
-<div id="fatorial-2-14-fração" class="section level1">
-<h1>Fatorial 2 1/4 fração</h1>
+<div id="fatorial-fracionado" class="section level1">
+<h1>Fatorial fracionado</h1>
+<p>Em situações nas quais o pesquisador pode aceitar como desprezíveis
+os efeitos das interações de segunda ordem e superiores, então as
+informações interessantes sobre os efeitos princiais e sobre as
+interações de primeira ordem, podem ser obtidas através de uma fração de
+um fatorial completo.</p>
+<p>Delineamentos desse tipo são ditos delineamentos fatoriais
+fracionados e têm grande utilidade nos experimentos que antecedem ao
+experimento final, como no caso da seleção de fatores e de seus níveis
+(screening desing) e são exaustivamente utilizados no desenvolvimento e
+na otimização de processos e produtos.</p>
+<div id="fatorial-2-12-fração" class="section level2">
+<h2>Fatorial 2 1/2 fração</h2>
 </div>
-<div id="fatorial-2-k-p" class="section level1">
-<h1>Fatorial 2 ^(k-p)</h1>
+<div id="fatorial-2-14-fração" class="section level2">
+<h2>Fatorial 2 1/4 fração</h2>
 </div>
-<div id="estrutura-do-modelo" class="section level1">
-<h1>Estrutura do modelo</h1>
+<div id="fatorial-2-k-p" class="section level2">
+<h2>Fatorial 2 ^(k-p)</h2>
 </div>
-<div id="estrutura-de-resolução-3" class="section level1">
-<h1>Estrutura de resolução 3</h1>
+<div id="estrutura-do-modelo" class="section level2">
+<h2>Estrutura do modelo</h2>
+</div>
+<div id="estrutura-de-resolução-3" class="section level2">
+<h2>Estrutura de resolução 3</h2>
+</div>
 </div>
 <div id="exemplo-prático" class="section level1">
 <h1>Exemplo prático</h1>
