@@ -48,23 +48,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 \quad Assim, considerando um delineamento inteiramente casualizado com $n$ repetições, os dois fatores A com $a$ níveis e B com $b$, o modelo estatístico é dado por:
 
-\begin{equation}
-  \begin{center}
-    
-    y_{ikj} = \mu + \alpha_i + \gamma_j + (\alpha\gamma)_{ik} + \epsilon_{ikj}
-    
-  \end{center}
-\end{equation}
+$$ y_{ikj} = \mu + \alpha_i + \gamma_j + (\alpha\gamma)_{ik} + \epsilon_{ikj} $$
 
 onde:
 
-\begin{itemize}
-  \item $\mu$ é a média geral
-  \item $\alpha_i$ é o efeito o i-ésimo nível do fator A, i = 1,...,$a$
-  \item $\gamma_j$ é o efeito do j-ésimo nível do fator B, j = 1,...,$b$
-  \item $(\alpha\gamma)_{ij}$ é o efeito da interação entres os fatores A e B
-  \item $\epsilon_{ijk}$ é o erro experimental
-\end{itemize}
+  - $\mu$ é a média geral
+  - $\alpha_i$ é o efeito o i-ésimo nível do fator A, i = 1,...,$a$
+  - $\gamma_j$ é o efeito do j-ésimo nível do fator B, j = 1,...,$b$
+  - $(\alpha\gamma)_{ij}$ é o efeito da interação entres os fatores A e B
+  - $\epsilon_{ijk}$ é o erro experimental
 
 # Fatorial 2 1/2 fração
 
