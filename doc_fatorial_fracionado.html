@@ -473,8 +473,493 @@ fracionados e têm grande utilidade nos experimentos que antecedem ao
 experimento final, como no caso da seleção de fatores e de seus níveis
 (screening desing) e são exaustivamente utilizados no desenvolvimento e
 na otimização de processos e produtos.</p>
+<p>Um dos principais usos deste delineamento são em experimentos de
+triagem, experimentos no quais muitos fatores são considerados e o
+objetivo é identifica aqueles fatores (se houver) que têm grandes
+efeitos. Os experimentos de triagem geralmente são realizados nos
+estágios iniciais de um projeto, quando muitos dos fatores inicialmente
+considerados prováveis têm pouco ou nenhum efeito sobre a resposta. Os
+fatoes identiicados como importantes são então investigados mais
+detalhadamente em experimetnos subsequentes.</p>
+<p>O uso bem-sucedido de experimentos fatoriais fracionários é baseado
+em três ideias-chave:</p>
+<ol style="list-style-type: decimal">
+<li><strong>O princípio da esparsidade dos efeitos</strong>: Quando há
+várias variáveis, o sistema ou processo provavelmente será conduzido
+principalmente por alguns dos principais efeitos e interações de baixa
+ordem.<br />
+</li>
+<li><strong>A propriedade de projeção</strong>. Os experimentos
+fatoriais fracionários podem ser projetados em experimentos mais fortes
+(maiores) no subconjunto de fatores significativos.<br />
+</li>
+<li><strong>Experimentação sequencial</strong>. É possível combinar as
+execuções de dois (ou mais) fatoriais fracionários para montar
+sequencialmente um projeto maior para estimar os efeitos dos fatores e
+as interações de interesse.</li>
+</ol>
 <div id="fatorial-2-12-fração" class="section level2">
 <h2>Fatorial 2 1/2 fração</h2>
+<p>Considere um experimento fatorial <span class="math inline">\(2^4\)</span>. Nesse caso, o experimento completo
+envolve 16 combinações. Suponha que queiramos reduzir o número de
+combinações de teste para 8. Então, queremos realizar metade de um
+experimento <span class="math inline">\(2^4\)</span>, ou seja, <span class="math inline">\(\frac{1}{2} 2^4 = 2^{-1} 2^4 = 2^{4-1} =
+8\)</span> combinações.</p>
+<p>Portanto, o experimento básico é um experimento <span class="math inline">\(2^3\)</span>, com uma matriz de planejamento
+ilustrada abaixo.</p>
+<table>
+<caption>Matriz de planejamento para experimento <span class="math inline">\(2^3\)</span></caption>
+<thead>
+<tr class="header">
+<th>Teste</th>
+<th><span class="math inline">\(X_1\)</span></th>
+<th><span class="math inline">\(X_2\)</span></th>
+<th><span class="math inline">\(X_3\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+</tbody>
+</table>
+<p>Entretanto, uma quarta variável, x4, precisa ser introduzida neste
+planejamento. Suponha que x4 seja introduzida no experimento de forma
+que a coluna de sinais correspondente ao efeito 123 seja utilizada para
+definir os níveis de x4 para as 8 combinações de teste, conforme
+ilustrado na matriz de planejamento abaixo.</p>
+<table>
+<caption>Matriz de planejamento para experimento fracionário</caption>
+<thead>
+<tr class="header">
+<th>Teste</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4 = 123</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+</tbody>
+</table>
+<p>E a matriz de cáculo dos efeitos para um planejamento como este é
+dado por:</p>
+<table style="width:100%;">
+<caption>Matriz de cálculo, experimento fracionário <span class="math inline">\(2^{4-1}\)</span>.</caption>
+<colgroup>
+<col width="11%" />
+<col width="2%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Teste</th>
+<th>I</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+<th>23</th>
+<th>24</th>
+<th>34</th>
+<th>123</th>
+<th>124</th>
+<th>134</th>
+<th>234</th>
+<th>1234</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+</tbody>
+</table>
+<p>Examinando a matriz de cálculo, podemos perceber que muitas das
+colunas são idênticas. Das 16 colunas, apenas 8 são únicas, ou seja, a
+combinação linear para o cálculo do efeito da variável 1 é o mesmo que
+para o cálculo do efeito da interação entre 234. Da mesma forma temos os
+seguintes confundimentos:</p>
+<p>1 e 234; 12 e 34<br />
+2 e 134; 13 e 24<br />
+3 e 124; 23 e 14<br />
+4 e 123; Média I e 1234</p>
+<p>Assim, as 8 colunas diferentes entre si, quando multiplicada pela
+coluna de dados e dividindo por 4 (N/2), são usadas para se obter as
+combinações lineares <span class="math inline">\(l_0\)</span>, <span class="math inline">\(l_1\)</span>, <span class="math inline">\(l_2\)</span>, …, <span class="math inline">\(l_{123}\)</span> de efeitos confundidos.
+Assim:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(l_0\)</span></td>
+<td>estima</td>
+<td>Média + (½) 1234</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(l_1\)</span></td>
+<td>estima</td>
+<td>1 + 234</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(l_2\)</span></td>
+<td>estima</td>
+<td>2 + 134</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(l_3\)</span></td>
+<td>estima</td>
+<td>3 + 124</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(l_{12}\)</span></td>
+<td>estima</td>
+<td>12 + 34</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(l_{13}\)</span></td>
+<td>estima</td>
+<td>13 + 24</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(l_{23}\)</span></td>
+<td>estima</td>
+<td>23 + 14</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(l_{123}\)</span></td>
+<td>estima</td>
+<td>4 / 123</td>
+</tr>
+</tbody>
+</table>
+<p>Se assumimos que as interações de 3 fatores e de 4 fatores podem ser
+desprezadas, o experimento produz as seguintes combinações lineares.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(l_0\)</span></td>
+<td>estima</td>
+<td>Média</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(l_1\)</span></td>
+<td>estima</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(l_2\)</span></td>
+<td>estima</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(l_3\)</span></td>
+<td>estima</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(l_{12}\)</span></td>
+<td>estima</td>
+<td>12 + 34</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(l_{13}\)</span></td>
+<td>estima</td>
+<td>13 + 24</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(l_{23}\)</span></td>
+<td>estima</td>
+<td>23 + 14</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(l_{123}\)</span></td>
+<td>estima</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Associações , como as definidas anteriormente , definem a resolução
+de um fatorial fracionado De modo geral , a resolução de um fatorial
+fracionado é igual ao menor número de letras de sua relação definidora .
+É importante lembrar que quanto maior for a resolução , maior será a
+utilidade prática do fatorial fracionado.</p>
+<p><strong>Resolução III </strong> Não há associação entre efeitos
+principais . Os efeitos principais estlo associados a interações de
+primeira ordem ( interações de dois fatores ) . As interações de primen
+ordem estão associadas entre si . Pouco útil na prática.</p>
+<p><strong>Resolução IV</strong> Não há associações entre efeitos
+principais e interações de primeira orden As interações de primeira
+ordem estão associadas entre si.</p>
+<p><strong>Resoluçção V</strong> Não há associação entre efeitos
+principais. Não há associações entre efeitos principais e interações de
+preimeira ordem.</p>
 </div>
 <div id="fatorial-2-14-fração" class="section level2">
 <h2>Fatorial 2 1/4 fração</h2>

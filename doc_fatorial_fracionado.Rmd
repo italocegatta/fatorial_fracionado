@@ -75,7 +75,113 @@ Em situações nas quais o pesquisador pode aceitar como desprezíveis os efeito
 
 Delineamentos desse tipo são ditos delineamentos fatoriais fracionados e têm grande utilidade nos experimentos que antecedem ao experimento final, como no caso da seleção de fatores e de seus níveis (screening desing) e são exaustivamente utilizados no desenvolvimento e na otimização de processos e produtos. 
 
+Um dos principais usos deste delineamento são em experimentos de triagem, experimentos no quais muitos fatores são considerados e o objetivo é identifica aqueles fatores (se houver) que têm grandes efeitos. Os experimentos de triagem geralmente são realizados nos estágios iniciais de um projeto, quando muitos dos fatores inicialmente considerados prováveis têm pouco ou nenhum efeito sobre a resposta. Os fatoes identiicados como importantes são então investigados mais detalhadamente em experimetnos subsequentes.
+
+O uso bem-sucedido de experimentos fatoriais fracionários é baseado em três ideias-chave: 
+
+  1. **O princípio da esparsidade dos efeitos**:  Quando há várias variáveis, o sistema ou processo provavelmente será conduzido principalmente por alguns dos principais efeitos e interações de baixa ordem.  
+  1. **A propriedade de projeção**.  Os experimentos fatoriais fracionários podem ser projetados em experimentos mais fortes (maiores) no subconjunto de fatores significativos.  
+  1. **Experimentação sequencial**.  É possível combinar as execuções de dois (ou mais) fatoriais fracionários para montar sequencialmente um projeto maior para estimar os efeitos dos fatores e as interações de interesse.
+
 ## Fatorial 2 1/2 fração
+
+Considere um experimento fatorial $2^4$. Nesse caso, o experimento completo envolve 16 combinações. Suponha que queiramos reduzir o número de combinações de teste para 8. Então, queremos realizar metade de um experimento $2^4$, ou seja, $\frac{1}{2} 2^4 = 2^{-1} 2^4 = 2^{4-1} = 8$ combinações.
+
+Portanto, o experimento básico é um experimento $2^3$, com uma matriz de planejamento ilustrada abaixo.
+
+| Teste | $X_1$ | $X_2$ | $X_3$ |
+|-------|----|----|----|
+| 1     | -  | -  | -  |
+| 2     | +  | -  | -  |
+| 3     | -  | +  | -  |
+| 4     | +  | +  | -  |
+| 5     | -  | -  | +  |
+| 6     | +  | -  | +  |
+| 7     | -  | +  | +  |
+| 8     | +  | +  | +  |
+
+: Matriz de planejamento para experimento $2^3$
+
+
+Entretanto, uma quarta variável, x4, precisa ser introduzida neste planejamento. Suponha que x4 seja introduzida no experimento de forma que a coluna de sinais correspondente ao efeito 123 seja utilizada para definir os níveis de x4 para as 8 combinações de teste, conforme ilustrado na matriz de planejamento abaixo.
+
+| Teste | 1 | 2 | 3 | 4 = 123 |
+|-------|---|---|---|---------|
+| 1     | - | - | - | -       |
+| 2     | + | - | - | +       |
+| 3     | - | + | - | +       |
+| 4     | + | + | - | -       |
+| 5     | - | - | + | +       |
+| 6     | + | - | + | -       |
+| 7     | - | + | + | -       |
+| 8     | + | + | + | +       |
+
+: Matriz de planejamento para experimento fracionário
+
+E a matriz de cáculo dos efeitos para um planejamento como este é dado por:
+
+| Teste | I | 1  | 2  | 3  | 4  | 12 | 13 | 14 | 23 | 24 | 34 | 123 | 124 | 134 | 234 | 1234 |
+| ----- | - | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --- | --- | --- | --- | ---- |
+| 1     | + | -  | -  | -  | -  | +  | +  | +  | +  | +  | +  | -   | -   | -   | -   | +    |
+| 2     | + | +  | -  | -  | +  | -  | -  | +  | +  | -  | -  | +   | -   | -   | +   | +    |
+| 3     | + | -  | +  | -  | +  | -  | +  | -  | -  | +  | -  | +   | -   | +   | -   | +    |
+| 4     | + | +  | +  | -  | -  | +  | -  | -  | -  | -  | +  | -   | -   | +   | +   | +    |
+| 5     | + | -  | -  | +  | +  | +  | -  | -  | -  | -  | +  | +   | +   | -   | -   | +    |
+| 6     | + | +  | -  | +  | -  | -  | +  | -  | -  | +  | -  | -   | +   | -   | +   | +    |
+| 7     | + | -  | +  | +  | -  | -  | -  | +  | +  | -  | -  | -   | +   | +   | -   | +    |
+| 8     | + | +  | +  | +  | +  | +  | +  | +  | +  | +  | +  | +   | +   | +   | +   | +    |
+
+: Matriz de cálculo, experimento fracionário $2^{4-1}$.
+
+Examinando a matriz de cálculo, podemos perceber que muitas das
+colunas são idênticas. Das 16 colunas, apenas 8 são únicas, ou seja, a
+combinação linear para o cálculo do efeito da variável 1 é o mesmo que para o
+cálculo do efeito da interação entre 234. Da mesma forma temos os seguintes
+confundimentos:
+
+1 e 234; 12 e 34  
+2 e 134; 13 e 24  
+3 e 124; 23 e 14  
+4 e 123; Média I e 1234  
+
+Assim, as 8 colunas diferentes entre si, quando multiplicada pela coluna de
+dados e dividindo por 4 (N/2), são usadas para se obter as combinações lineares
+$l_0$, $l_1$, $l_2$, ..., $l_{123}$ de efeitos confundidos.
+Assim:
+
+|           |        |                  |
+| --------- | ------ | ---------------- |
+| $l_0$     | estima | Média + (½) 1234 |
+| $l_1$     | estima | 1 + 234          |
+| $l_2$     | estima | 2 + 134          |
+| $l_3$     | estima | 3 + 124          |
+| $l_{12}$  | estima | 12 + 34          |
+| $l_{13}$  | estima | 13 + 24          |
+| $l_{23}$  | estima | 23 + 14          |
+| $l_{123}$ | estima | 4 / 123          |
+
+Se assumimos que as interações de 3 fatores e de 4 fatores podem ser
+desprezadas, o experimento produz as seguintes combinações lineares.
+
+|           |        |         |
+| --------- | ------ | ------- |
+| $l_0$     | estima | Média   |
+| $l_1$     | estima | 1       |
+| $l_2$     | estima | 2       |
+| $l_3$     | estima | 3       |
+| $l_{12}$  | estima | 12 + 34 |
+| $l_{13}$  | estima | 13 + 24 |
+| $l_{23}$  | estima | 23 + 14 |
+| $l_{123}$ | estima | 4       |
+
+Associações , como as definidas anteriormente , definem a resolução de um fatorial fracionado De modo geral , a resolução de um fatorial fracionado é igual ao menor número de letras de sua relação definidora . É importante lembrar que quanto maior for a resolução , maior será a utilidade prática do fatorial fracionado.
+
+**Resolução III ** Não há associação entre efeitos principais . Os efeitos principais estlo associados a interações de primeira ordem ( interações de dois fatores ) . As interações de primen ordem estão associadas entre si . Pouco útil na prática.
+
+**Resolução IV** Não há associações entre efeitos principais e interações de primeira orden As interações de primeira ordem estão associadas entre si.
+
+**Resoluçção V**  Não há associação entre efeitos principais. Não há associações entre efeitos principais e interações de preimeira ordem.
+
 
 ## Fatorial 2 1/4 fração
 
