@@ -200,14 +200,34 @@ Associações , como as definidas anteriormente , definem a resolução de um fa
 
 Segundo Montgomery (2012), o modelo estatístico que será apresentado pelo uso da relação de definição completa, funciona bem em projetos simples, com as frações regulares, no entanto não funciona tão bem em configurações, onde as frações sejam não regulares. E ainda, existem alguns fatroias fracionários que não possuem relação definidora. 
 
+Como os experimentos fatoriais fracionados podem ter a ocorrencia de confudimento por não trabalhar com todas as possíveis combinações, sendo assim, para apresentar o modelo estatístico será utilizado a estrutura de aliases
+
 Assim, o método usa a representação do modelo polinomial ou de regressão do modelo, ou seja,
 
 $$ \boldsymbol{y} = \boldsymbol{X}_1 \boldsymbol{\beta}_1 + \boldsymbol{\epsilon}$$
 onde $\boldsymbol{y}$ é um vetor das respostas, $\boldsymbol{X}_1$ é uma matrix $nxp_1$ contendo a matriz de planejamento que pode ser expandida para a forma do modelo que o pesquisador deseja ajustar, $\boldsymbol{\beta}_1$ é um vetor $p_1 x1$ de parâmetros e $\boldsymbol{\epsilon}$ é um vetor $nx1$ de erros. A estimativa de mínimos quadrados de $\boldsymbol{\beta}_1$ é 
 
-$$ \hat{\boldsymbol{\beta}_1} = (\boldsymbol{X}_1'\boldsymbol{X}_1)^{-1}\boldsymbol{X}_1'\boldsymbol{y}$$
+$$ \hat{\boldsymbol{\beta}_1} = (\boldsymbol{X}{'}_1\boldsymbol{X}_1)^{-1}\boldsymbol{X}{'}_1\boldsymbol{y}$$
+
+Agora suponha que o modelo verdadeiro seja,
+
+$$ \boldsymbol{y} = \boldsymbol{X}_1 \boldsymbol{\beta}_1 + \boldsymbol{X}_2 \boldsymbol{\beta}_2 + \boldsymbol{\epsilon} $$
+onde $\boldsymbol{X}_2$ é uma matriz $nxp_2$ contendo variáveis adicionais que não estão presentes no modelo ajustado e $\boldsymbol{\beta}_2$ é um vetor $p_2 x1$ dos parâmetros associados a essas variáveis. Assim, podemos mostrar que
+
+$$ E(\hat{\boldsymbol{\beta}_1}) = \boldsymbol{\beta}_1 + (\boldsymbol{X}{'}_1\boldsymbol{X}_1)^{-1}\boldsymbol{X}{'}_1\boldsymbol{X}_2\boldsymbol{\beta}_2 = \boldsymbol{\beta}_1 + \boldsymbol{A}\boldsymbol{\beta}_2$$
+
+$\boldsymbol{A}$ é chamada de matriz de aliase. Os elemtnos desta matriz operão em $\boldsymbol{\beta}_2$ indentificando as relações de aliase para os parâmetos no vetor $\boldsymbol{\beta}_1$.
+
+Para exepmlificar, suponha que em um experimento fatorial fracionado $2{3-1}$ com a realação definidora $I = ABC$ ou $I = x_1x_2x_3$. O modelo que será ajustado terá somente com a presença dos efeitos principais, ou seja
+
+$$y = \mu + \alpha_1x_1 + \gamma_1x_2 + \tau_1x_3 + \boldsymbol{\epsilon}$$
+Na notação anterior
+
 ## Estrutura de resolução 3
 
 # Exemplo prático
 
 <https://www.youtube.com/watch?v=UGqnRCRV1k8&t=566s&ab_channel=CanaldaEngenhariadeManufaturaeQualidade>
+
+<https://support.minitab.com/pt-br/minitab/18/help-and-how-to/modeling-statistics/doe/how-to/factorial/analyze-variability/interpret-the-results/all-statistics-and-graphs/alias-structure/>
+estrutura de aliases
