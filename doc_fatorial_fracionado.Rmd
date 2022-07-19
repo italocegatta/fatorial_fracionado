@@ -68,6 +68,9 @@ onde:
 -   $\gamma_j$ é o efeito do j-ésimo nível do fator B, j = 1,...,$b$
 -   $(\alpha\gamma)_{ij}$ é o efeito da interação entres os fatores A e B
 -   $\epsilon_{ijk}$ é o erro experimental
+```{r}
+knitr::include_graphics("./dados/fatorial2x2.png")
+```
 
 # Fatorial fracionado
 
