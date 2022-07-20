@@ -218,22 +218,26 @@ $$ E(\hat{\boldsymbol{\beta}_1}) = \boldsymbol{\beta}_1 + (\boldsymbol{X}{'}_1\b
 
 $\boldsymbol{A}$ é chamada de matriz de aliase. Os elemtnos desta matriz operão em $\boldsymbol{\beta}_2$ indentificando as relações de aliase para os parâmetos no vetor $\boldsymbol{\beta}_1$.
 
-Para exepmlificar, suponha que em um experimento fatorial fracionado $2{3-1}$ com a realação definidora $I = ABC$ ou $I = x_1x_2x_3$. O modelo que será ajustado terá somente com a presença dos efeitos principais, ou seja
+Para exepmlificar, suponha que em um experimento fatorial fracionado $2{3-1}$ com a realação definidora $I = ABC$ ou $I = x_1x_2x_3$. O modelo que será ajustado terá somente a presença dos efeitos principais, ou seja
 
-$$y = \mu + \alpha_1x_1 + \gamma_1x_2 + \tau_1x_3 + \boldsymbol{\epsilon}$$
+$$y = \mu + \alpha x_1 + \gamma x_2 + \tau x_3 + \epsilon$$
 Na notação anterior
 
-$$\boldsymbol{X}_1 = \begin{bmatrix}
-1 & -1 & -1 & 11 \\ 
- -1& -1  & -1 & 1\\ 
- 3 & 2 & 1 & 2\\ 
-1 & 1 & 1 & 1
-\end{bmatrix} \boldsymbol{X}_1 = \begin{bmatrix}
-1 & -1 & -1 & 11 \\ 
- -1& -1  & -1 & 1\\ 
- 3 & 2 & 1 & 2\\ 
+$$\boldsymbol{\beta}_1 = \begin{bmatrix}
+\mu \\ 
+\alpha \\ 
+\gamma\\ 
+\tau \\
+\end{bmatrix} e   \ \ \boldsymbol{X}_1 = \begin{bmatrix}
+1 & -1 & -1 & 1 \\ 
+ 1 & 1  & -1 & -1\\ 
+ 1 & -1 & 1 & -1\\ 
 1 & 1 & 1 & 1
 \end{bmatrix}$$
+
+Agora vamos supor que o verdadeiro modelo contenha todas as interaçoes de seunga ordem dos fatores, desse modo,
+
+$$ y = \mu + \alpha x_1 + \gamma x_2 + \tau x_3 + (\alpha\gamma) x_1x_2 + (\alpha\tau) x_1x_3 + (\gamma\tau) x_2x_3+ \epsilon$$
 
 ## Estrutura de resolução 3
 
