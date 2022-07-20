@@ -238,6 +238,81 @@ $$\boldsymbol{\beta}_1 = \begin{bmatrix}
 Agora vamos supor que o verdadeiro modelo contenha todas as interaçoes de seunga ordem dos fatores, desse modo,
 
 $$ y = \mu + \alpha x_1 + \gamma x_2 + \tau x_3 + (\alpha\gamma) x_1x_2 + (\alpha\tau) x_1x_3 + (\gamma\tau) x_2x_3+ \epsilon$$
+Assim, nosso $\boldsymbol{\beta}_2$ e nossa $\boldsymbol{X}_2$ serão,
+
+$$ \boldsymbol{\beta}_2 = \begin{bmatrix}
+(\alpha\gamma) \\ 
+(\alpha\tau) \\ 
+(\gamma\tau)\\ 
+\end{bmatrix}  e \ \ \boldsymbol{X_2} = \begin{bmatrix}
+1 & -1 & -1 \\ 
+-1 & -1 & 1 \\ 
+-1 & 1 & -1 \\ 
+ 1 & 1 & 1
+\end{bmatrix}$$
+
+Logo,
+
+$$ (\boldsymbol{X}{'}_1\boldsymbol{X}_1)^{-1} = (1/4)\boldsymbol{I}_4 \ \ e \ \ \boldsymbol{X}{'}_1\boldsymbol{X}_2 = \begin{bmatrix}
+0 & 0 & 0 \\ 
+ 0 & 0 & 4 \\ 
+0 & 4  & 0 \\ 
+4 & 0 & 0
+\end{bmatrix}$$
+
+Portanto,
+
+$$ E(\boldsymbol{\hat{\boldsymbol{\beta}_1}}) = \boldsymbol{\beta}_1 + \boldsymbol{A}\boldsymbol{\beta}_2 \\  E\begin{bmatrix}
+\hat{\mu}\\ 
+\hat{\alpha}\\ 
+\hat{\gamma}\\ 
+\hat{\tau}
+\end{bmatrix} = \begin{bmatrix}
+\mu\\ 
+\alpha\\ 
+\gamma\\ 
+\tau
+\end{bmatrix} + (1/4)\boldsymbol{I}_4\begin{bmatrix}
+0 & 0 & 0 \\ 
+ 0 & 0 & 4 \\ 
+0 & 4  & 0 \\ 
+4 & 0 & 0
+\end{bmatrix}\begin{bmatrix}
+(\alpha\gamma) \\ 
+(\alpha\tau) \\ 
+(\gamma\tau)\\ 
+\end{bmatrix} \\ = \begin{bmatrix}
+\mu\\ 
+\alpha\\ 
+\gamma\\ 
+\tau
+\end{bmatrix} + \begin{bmatrix}
+0 & 0 & 0 \\ 
+ 0 & 0 & 1 \\ 
+0 & 1  & 0 \\ 
+1 & 0 & 0
+\end{bmatrix}\begin{bmatrix}
+(\alpha\gamma) \\ 
+(\alpha\tau) \\ 
+(\gamma\tau)\\ 
+\end{bmatrix} \\ = \begin{bmatrix}
+\mu\\ 
+\alpha\\ 
+\gamma\\ 
+\tau
+\end{bmatrix} + \begin{bmatrix}
+0\\ 
+(\alpha\gamma)\\ 
+(\alpha\tau)\\ 
+(\gamma\tau)
+\end{bmatrix} \\ = \begin{bmatrix}
+\mu \\ 
+\alpha + (\gamma\tau)\\ 
+\gamma + (\alpha\tau)\\ 
+\tau + (\alpha\gamma)
+\end{bmatrix}$$
+
+Dessa formar, podemos perceber que cada um dos fatores principais está associado a uma das interaçoes de segunda ordem. Perceba que cada uma das linhas da matriz de aliase representa um dos fatores de $\boldsymbol{\beta}_1$ e cada uma das colunas respresenta um dos fatores de $\boldsymbol{\beta}_2$. Mesmo sendo um exemplo simples, sendo de forma geral esse método pode ser aplicado a projetos mais complexos.
 
 ## Estrutura de resolução 3
 

@@ -1016,20 +1016,102 @@ relações de aliase para os parâmetos no vetor <span class="math inline">\(\bo
 <p>Para exepmlificar, suponha que em um experimento fatorial fracionado
 <span class="math inline">\(2{3-1}\)</span> com a realação definidora
 <span class="math inline">\(I = ABC\)</span> ou <span class="math inline">\(I = x_1x_2x_3\)</span>. O modelo que será ajustado
-terá somente com a presença dos efeitos principais, ou seja</p>
-<p><span class="math display">\[y = \mu + \alpha_1x_1 + \gamma_1x_2 +
-\tau_1x_3 + \boldsymbol{\epsilon}\]</span> Na notação anterior</p>
-<p><span class="math display">\[\boldsymbol{X}_1 = \begin{bmatrix}
-1 &amp; -1 &amp; -1 &amp; 11 \\
--1&amp; -1  &amp; -1 &amp; 1\\
-3 &amp; 2 &amp; 1 &amp; 2\\
-1 &amp; 1 &amp; 1 &amp; 1
-\end{bmatrix} \boldsymbol{X}_1 = \begin{bmatrix}
-1 &amp; -1 &amp; -1 &amp; 11 \\
--1&amp; -1  &amp; -1 &amp; 1\\
-3 &amp; 2 &amp; 1 &amp; 2\\
+terá somente a presença dos efeitos principais, ou seja</p>
+<p><span class="math display">\[y = \mu + \alpha x_1 + \gamma x_2 + \tau
+x_3 + \epsilon\]</span> Na notação anterior</p>
+<p><span class="math display">\[\boldsymbol{\beta}_1 = \begin{bmatrix}
+\mu \\
+\alpha \\
+\gamma\\
+\tau \\
+\end{bmatrix} e   \ \ \boldsymbol{X}_1 = \begin{bmatrix}
+1 &amp; -1 &amp; -1 &amp; 1 \\
+1 &amp; 1  &amp; -1 &amp; -1\\
+1 &amp; -1 &amp; 1 &amp; -1\\
 1 &amp; 1 &amp; 1 &amp; 1
 \end{bmatrix}\]</span></p>
+<p>Agora vamos supor que o verdadeiro modelo contenha todas as
+interaçoes de seunga ordem dos fatores, desse modo,</p>
+<p><span class="math display">\[ y = \mu + \alpha x_1 + \gamma x_2 +
+\tau x_3 + (\alpha\gamma) x_1x_2 + (\alpha\tau) x_1x_3 + (\gamma\tau)
+x_2x_3+ \epsilon\]</span> Assim, nosso <span class="math inline">\(\boldsymbol{\beta}_2\)</span> e nossa <span class="math inline">\(\boldsymbol{X}_2\)</span> serão,</p>
+<p><span class="math display">\[ \boldsymbol{\beta}_2 = \begin{bmatrix}
+(\alpha\gamma) \\
+(\alpha\tau) \\
+(\gamma\tau)\\
+\end{bmatrix}  e \ \ \boldsymbol{X_2} = \begin{bmatrix}
+1 &amp; -1 &amp; -1 \\
+-1 &amp; -1 &amp; 1 \\
+-1 &amp; 1 &amp; -1 \\
+1 &amp; 1 &amp; 1
+\end{bmatrix}\]</span></p>
+<p>Logo,</p>
+<p><span class="math display">\[
+(\boldsymbol{X}{&#39;}_1\boldsymbol{X}_1)^{-1} = (1/4)\boldsymbol{I}_4 \
+\ e \ \ \boldsymbol{X}{&#39;}_1\boldsymbol{X}_2 = \begin{bmatrix}
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 4 \\
+0 &amp; 4  &amp; 0 \\
+4 &amp; 0 &amp; 0
+\end{bmatrix}\]</span></p>
+<p>Portanto,</p>
+<p><span class="math display">\[
+E(\boldsymbol{\hat{\boldsymbol{\beta}_1}}) = \boldsymbol{\beta}_1 +
+\boldsymbol{A}\boldsymbol{\beta}_2 \\  E\begin{bmatrix}
+\hat{\mu}\\
+\hat{\alpha}\\
+\hat{\gamma}\\
+\hat{\tau}
+\end{bmatrix} = \begin{bmatrix}
+\mu\\
+\alpha\\
+\gamma\\
+\tau
+\end{bmatrix} + (1/4)\boldsymbol{I}_4\begin{bmatrix}
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 4 \\
+0 &amp; 4  &amp; 0 \\
+4 &amp; 0 &amp; 0
+\end{bmatrix}\begin{bmatrix}
+(\alpha\gamma) \\
+(\alpha\tau) \\
+(\gamma\tau)\\
+\end{bmatrix} \\ = \begin{bmatrix}
+\mu\\
+\alpha\\
+\gamma\\
+\tau
+\end{bmatrix} + \begin{bmatrix}
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+0 &amp; 1  &amp; 0 \\
+1 &amp; 0 &amp; 0
+\end{bmatrix}\begin{bmatrix}
+(\alpha\gamma) \\
+(\alpha\tau) \\
+(\gamma\tau)\\
+\end{bmatrix} \\ = \begin{bmatrix}
+\mu\\
+\alpha\\
+\gamma\\
+\tau
+\end{bmatrix} + \begin{bmatrix}
+0\\
+(\alpha\gamma)\\
+(\alpha\tau)\\
+(\gamma\tau)
+\end{bmatrix} \\ = \begin{bmatrix}
+\mu \\
+\alpha + (\gamma\tau)\\
+\gamma + (\alpha\tau)\\
+\tau + (\alpha\gamma)
+\end{bmatrix}\]</span></p>
+<p>Dessa formar, podemos perceber que cada um dos fatores principais
+está associado a uma das interaçoes de segunda ordem. Perceba que cada
+uma das linhas da matriz de aliase representa um dos fatores de <span class="math inline">\(\boldsymbol{\beta}_1\)</span> e cada uma das
+colunas respresenta um dos fatores de <span class="math inline">\(\boldsymbol{\beta}_2\)</span>. Mesmo sendo um
+exemplo simples, sendo de forma geral esse método pode ser aplicado a
+projetos mais complexos.</p>
 </div>
 <div id="estrutura-de-resolução-3" class="section level2">
 <h2>Estrutura de resolução 3</h2>
