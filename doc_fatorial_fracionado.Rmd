@@ -45,13 +45,13 @@ Em um exeperimento fatorial completo são realizadas todas as possiveis combina�
 \end{table}
 ```
 
-No geral, quando deseja-se estudar os efeitos dos fatores, planejamentos fatoriais são mais eficientes. Generalizando o exemplo anterior, considere agora que temos um fator A com $a$ níveis, um fator B com $b$ níveis e um fator C com $c$ níveis, teremos abc combinações, sendo assim cada réplica ira conter todas as abc combinações de tratamentos. Em um esquema fatorial os fatores são ditos cruzados, quando são dispostos.
+No geral, quando deseja-se estudar os efeitos dos fatores, planejamentos fatoriais são mais eficientes. Generalizando o exemplo anterior, considere agora que temos um fator A com $a$ níveis, um fator B com $b$ níveis e um fator C com $c$ níveis, teremos $abc$ combinações, sendo assim cada réplica ira conter todas as abc combinações de tratamentos. Em um esquema fatorial os fatores são ditos cruzados, quando são dispostos.
 
 O efeito de um fator é definido como a mudança no valor observado da variável resposta quando o muda-se o nível do fator. Geralmente chamado de efeito principal, refere-se aos fatores primários de interesse no experimento.
 
 ## Esquema Fatorial 2x2 Completo
 
-Considerado como o esquema fatorial mais simples, envolvendo somente dois fatores A e B, tendo cada um desses dois fatores um número de níveis a ser testado, consideramos $a$ níveis para o fator A e $b$ níveis para o fator B. Assim, termos ab comibinações no experimento. Nesse tipo de experimento, podemos testar:
+Considerado como o esquema fatorial mais simples, envolvendo somente dois fatores A e B, tendo cada um desses dois fatores um número de níveis a ser testado, consideramos $a$ níveis para o fator A e $b$ níveis para o fator B. Assim, termos $ab$ comibinações no experimento. Nesse tipo de experimento, podemos testar:
 
   - a resposta é alterada significativamente quando o nível do fator A é alterado;
   - a resposta é alterada significativamente quando o nível do fator B é alterado;
@@ -80,11 +80,11 @@ knitr::include_graphics("./dados/modelomatricia2x2.png")
 
 # Fatorial fracionado
 
-Em situações nas quais o pesquisador pode aceitar como desprezíveis os efeitos das interações de segunda ordem e superiores, então as informações interessantes sobre os efeitos princiais e sobre as interações de primeira ordem, podem ser obtidas através de uma fração de um fatorial completo.
+Em situações nas quais o pesquisador pode aceitar como desprezíveis os efeitos das interações de segunda ordem e superiores, ou seja, somente as informações de interesse são sobre os efeitos princiais e interações de primeira ordem, o que podem ser obtidas através de uma fração de um fatorial completo.
 
-Delineamentos desse tipo são ditos delineamentos fatoriais fracionados e têm grande utilidade nos experimentos que antecedem ao experimento final, como no caso da seleção de fatores e de seus níveis (screening desing) e são exaustivamente utilizados no desenvolvimento e na otimização de processos e produtos. 
+Esquemas desse tipo são ditos delineamentos fatoriais fracionados e têm grande utilidade nos experimentos que antecedem ao experimento final, como no caso da seleção de fatores e de seus níveis (screening desing) e são exaustivamente utilizados no desenvolvimento e na otimização de processos e produtos. 
 
-Um dos principais usos deste delineamento são em experimentos de triagem, experimentos no quais muitos fatores são considerados e o objetivo é identifica aqueles fatores (se houver) que têm grandes efeitos. Os experimentos de triagem geralmente são realizados nos estágios iniciais de um projeto, quando muitos dos fatores inicialmente considerados prováveis têm pouco ou nenhum efeito sobre a resposta. Os fatoes identiicados como importantes são então investigados mais detalhadamente em experimetnos subsequentes.
+Um dos principais uso deste delineamento são em experimentos de triagem, experimentos nos quais muitos fatores são considerados e o objetivo é identifica aqueles fatores (se houver) que tenham grandes efeitos. Os experimentos de triagem geralmente são realizados nos estágios iniciais de um projeto, quando muitos dos fatores inicialmente considerados prováveis têm pouco ou nenhum efeito sobre a resposta. Os fatoes identiicados como importantes são então investigados mais detalhadamente em experimetnos subsequentes.
 
 O uso bem-sucedido de experimentos fatoriais fracionários é baseado em três ideias-chave: 
 
@@ -112,7 +112,7 @@ Portanto, o experimento básico é um experimento $2^3$, com uma matriz de plane
 : Matriz de planejamento para experimento $2^3$
 
 
-Entretanto, uma quarta variável, x4, precisa ser introduzida neste planejamento. Suponha que x4 seja introduzida no experimento de forma que a coluna de sinais correspondente ao efeito 123 seja utilizada para definir os níveis de x4 para as 8 combinações de teste, conforme ilustrado na matriz de planejamento abaixo.
+Entretanto, uma quarta variável, $x_4$, precisa ser introduzida neste planejamento. Suponha que $x_4$ seja introduzida no experimento de forma que a coluna de sinais correspondente ao efeito 123 seja utilizada para definir os níveis de $x_4$ para as 8 combinações de teste, conforme ilustrado na matriz de planejamento abaixo.
 
 | Teste | 1 | 2 | 3 | 4 = 123 |
 |-------|---|---|---|---------|
@@ -185,16 +185,12 @@ desprezadas, o experimento produz as seguintes combinações lineares.
 
 Associações , como as definidas anteriormente , definem a resolução de um fatorial fracionado De modo geral , a resolução de um fatorial fracionado é igual ao menor número de letras de sua relação definidora . É importante lembrar que quanto maior for a resolução , maior será a utilidade prática do fatorial fracionado.
 
-**Resolução III ** Não há associação entre efeitos principais . Os efeitos principais estlo associados a interações de primeira ordem ( interações de dois fatores ) . As interações de primen ordem estão associadas entre si . Pouco útil na prática.
+**Resolução III ** Não há associação entre efeitos principais . Os efeitos principais estão associados as interações de primeira ordem (interações de dois fatores) . As interações de primeira ordem estão associadas entre si. Pouco útil na prática.
 
-**Resolução IV** Não há associações entre efeitos principais e interações de primeira orden As interações de primeira ordem estão associadas entre si.
+**Resolução IV** Não há associações entre os efeitos principais e interações de primeira orden. As interações de primeira ordem estão associadas entre si.
 
 **Resoluçção V**  Não há associação entre efeitos principais. Não há associações entre efeitos principais e interações de preimeira ordem.
 
-
-## Fatorial 2 1/4 fração
-
-## Fatorial 2 \^(k-p)
 
 ## Estrutura do modelo
 
@@ -312,7 +308,7 @@ $$ E(\boldsymbol{\hat{\boldsymbol{\beta}_1}}) = \boldsymbol{\beta}_1 + \boldsymb
 \tau + (\alpha\gamma)
 \end{bmatrix}$$
 
-Dessa formar, podemos perceber que cada um dos fatores principais está associado a uma das interaçoes de segunda ordem. Perceba que cada uma das linhas da matriz de aliase representa um dos fatores de $\boldsymbol{\beta}_1$ e cada uma das colunas respresenta um dos fatores de $\boldsymbol{\beta}_2$. Mesmo sendo um exemplo simples, sendo de forma geral esse método pode ser aplicado a projetos mais complexos.
+Dessa formar, podemos perceber que cada um dos fatores principais está associado a uma das interaçoes de segunda ordem. Perceba que cada uma das linhas da matriz de aliase representa um dos fatores de $\boldsymbol{\beta}_1$ e cada uma das colunas respresenta um dos fatores de $\boldsymbol{\beta}_2$. Mesmo sendo um exemplo simples, esse método pode ser aplicado a projetos mais complexos.
 
 ## Estrutura de resolução 3
 
