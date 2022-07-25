@@ -10,6 +10,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introdução
 
+Em um esquema fatorial, tem como objetivo avaliar ou testear os níveis presentes de cada em cada fator. No entanto, pode acontecer que tenhamos vários testes a serem realizados e um experimento muito grande. Assim, existe o que chamamos de fatorial fracionário, que consiste reduzir o experimento. Resumidamente, a ideia e reduzir a quantidade de testes a serem feitos, tornando mais ágil a conlusão, entretanto em um esquema fatorial fracionário ocorre-se perda de informações e empobrecimento da análise e sua conclusão.
+
+Este pequeno artigo falará um pouco sobre o esquema fatorial e depois irá aborda o esquema fatorial fracionário.
+
 ## Esquema Fatorial
 
 O esquema fatorial consiste na analise de um ou mais fatores de tratamentos, ou seja, todas as possiveis combinações dos níveis dos fatores são testadas. Por exemplo, se temos um fator A com dois níveis e um fator B com 4 níveis, teremos 2 x 4 = 8 combinações a serem testadas, assim as combinações passam a ser os tratamentos.
@@ -214,7 +218,7 @@ $$ E(\hat{\boldsymbol{\beta}_1}) = \boldsymbol{\beta}_1 + (\boldsymbol{X}{'}_1\b
 
 $\boldsymbol{A}$ é chamada de matriz de aliase. Os elemtnos desta matriz operão em $\boldsymbol{\beta}_2$ indentificando as relações de aliase para os parâmetos no vetor $\boldsymbol{\beta}_1$.
 
-Para exepmlificar, suponha que em um experimento fatorial fracionado $2{3-1}$ com a realação definidora $I = ABC$ ou $I = x_1x_2x_3$. O modelo que será ajustado terá somente a presença dos efeitos principais, ou seja
+Para exepmlificar, suponha que em um experimento fatorial fracionado $2^{3-1}$ com a realação definidora $I = ABC$ ou $I = x_1x_2x_3$. O modelo que será ajustado terá somente a presença dos efeitos principais, ou seja
 
 $$y = \mu + \alpha x_1 + \gamma x_2 + \tau x_3 + \epsilon$$
 Na notação anterior
