@@ -322,3 +322,5 @@ Dessa formar, podemos perceber que cada um dos fatores principais está associad
 
 <https://support.minitab.com/pt-br/minitab/18/help-and-how-to/modeling-statistics/doe/how-to/factorial/analyze-variability/interpret-the-results/all-statistics-and-graphs/alias-structure/>
 estrutura de aliases
+
+pg 253
