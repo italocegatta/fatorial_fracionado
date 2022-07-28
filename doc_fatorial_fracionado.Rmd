@@ -63,7 +63,7 @@ Ou ainda em sua forma matricial:
 $$ \boldsymbol{y} = \boldsymbol{X}_G \mu  + \boldsymbol{X}_A \alpha + \boldsymbol{X}_B \gamma + \boldsymbol{X}_{AB} + (\alpha\gamma) + \boldsymbol{\epsilon}$$
 Para exemplificar o modelo na forma matricial, considere um experimento fatorial 2x2, feito em um delineamento inteiramente casualizado com 3 repetições para cada tratamento, seja o fator A com e o fator B cada um com 2 níveis, o modelo estatístico na forma matricial será dado por:
 
-```{r echo=FALSE}
+```{r echo=FALSE, out.width="95%"}
 knitr::include_graphics("./dados/modelomatricia2x2.png")
 ```
 
@@ -294,7 +294,7 @@ desprezadas, o experimento produz as seguintes combinações lineares.
 
 Associações, como as definidas anteriormente, definem a resolução de um fatorial fracionado. De modo geral, a resolução de um fatorial fracionado é igual ao menor número de letras de sua relação definidora. É importante lembrar que quanto maior for a resolução, maior será a utilidade prática do fatorial fracionado. A relação entre as possíveis resoluções e o número de fatores pode ser vista na tabela a seguir:
 
-```{r echo=FALSE}
+```{r echo=FALSE, out.width="95%"}
 knitr::include_graphics("./dados/resolucao.png")
 ```
 
@@ -426,3 +426,22 @@ residuals(m0) %>%
   stat_qq_line() +
   theme_bw()
 ```
+
+Esse exemplo ilustra a importância do fatorial fracionado. Se tivessemos
+feito o experimento $2^6 = 64$ corridas, poderíamos estimar interações
+de ordens altas, mas com a fração $1/4$, de 16 corridas, verificamos que
+só 2 efeitos principais, duas interações de segunda ordem e uma de
+terceira ordem são importantes. Com economia, selecionamos de 6
+variáveis, apenas 2 principais, que são importantes, e que agora serão
+investigadas com maior rigor em experimento mais elaborados
+subsequentes. O fundamento do planejamento de experimentos é exatamente
+esse: obter maior informação possível, tirar o máximo de vantagem e da
+forma mais econômica, ou seja, ser eficiente na investigação.
+
+
+# Referências bibliográficas
+
+  - CARPINETTI, Luiz Cesar Ribeiro et al. Planejamento e análise de experimentos. 2009.
+  - MONTGOMERY, Douglas C. Design and analysis of experiments. John wiley & sons, 2017.
+  - RODRIGUES, Maria Isabel; IEMMA, Antônio Francisco. Planejamento De Experimentos e Otimização de Processos: Uma Estratégia Sequencial de Planejamentos. 2005.
+  - R Development Core Team. R: A Language and Environment for Statistical Computing. Vienna, Austria, 2009. ISBN 3-900051-07-0. Disponível em: [http://www.R-project.org](http://www.R-project.org).
