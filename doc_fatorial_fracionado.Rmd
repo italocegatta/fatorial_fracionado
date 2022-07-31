@@ -13,17 +13,17 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 # Introdução
 
-Em um delineamento em esquema fatorial tem como objetivo avaliar ou testear os níveis presentes em um experimento com mais de fator. No entanto, com o aumento de níveis e fatores, o experimento pode ficar inviável por conta da quantidade de parcelas a serem instaladas e avaliadas. O delineamento fatorial fracionário  é uma alternativa quando se quer reduzir o número de parcelas/ensaios de experimentos com muitos fatores.
+Em um delineamento em esquema fatorial tem como objetivo avaliar ou testar os níveis presentes em um experimento com mais de fator. No entanto, com o aumento de níveis e fatores, o experimento pode ficar inviável por conta da quantidade de parcelas a serem instaladas e avaliadas. O delineamento fatorial fracionado é uma alternativa quando se quer reduzir o número de parcelas/ensaios de experimentos com muitos fatores.
 
-Neste documento, abordaremos os principais conceitos por tras do delineamento fatorial fracionado com a resolução de um exemplo prático.
+Neste documento, abordaremos os principais conceitos por trás do delineamento fatorial fracionado com a resolução de um exemplo prático.
 
 # Esquema fatorial
 
-O esquema fatorial consiste na analise de um ou mais fatores de tratamentos e todas as possiveis combinações dos seus níveis. Por exemplo, se temos um fator A com dois níveis e um fator B com 4 níveis, teremos 2 x 4 = 8 combinações a serem testadas, assim as combinações passam a ser os tratamentos.
+O esquema fatorial consiste na análise de um ou mais fatores de tratamentos e todas as possíveis combinações dos seus níveis. Por exemplo, se temos um fator A com dois níveis e um fator B com 4 níveis, teremos 2 x 4 = 8 combinações a serem testadas, assim as combinações passam a ser os tratamentos.
 
-Considere, por exemplo, um processo de usinagem, onde desaja-se verificar o efeito do avanço, profundidade de corte e geometria da ferramenta na rugorisade superficial. Para realização do exeprimento, foi considerado três níveis para o avanço ($A_1$,$A_2$,$A_3$), 2 níveis para a profundidade do corte ($B_1$,$B_2$) e dois níveis para a geometria da ferramenta ($C_1$, $C_2$), Carpinet (2009, pag. 108).
+Considere, por exemplo, um processo de usinagem, onde deseja-se verificar o efeito do avanço, profundidade de corte e geometria da ferramenta na rugosidade superficial. Para realização do experimento, foi considerado três níveis para o avanço ($A_1$,$A_2$,$A_3$), 2 níveis para a profundidade do corte ($B_1$,$B_2$) e dois níveis para a geometria da ferramenta ($C_1$, $C_2$), Carpinet (2009, pag. 108).
 
-Em um exeperimento fatorial completo são realizadas todas as possiveis combinações dos nívies dos fatores. No exemplo, temos 3 x 2 x 2 = 12 combinações de teste, conforme segue na tabela.
+Em um experimento fatorial completo são realizadas todas as possíveis combinações dos níveis dos fatores. No exemplo, temos 3 x 2 x 2 = 12 combinações de teste, conforme segue na tabela.
 
 |               |               |
 | :-----------: | :-----------: |
@@ -40,7 +40,7 @@ No geral, quando deseja-se estudar os efeitos dos fatores, planejamentos fatoria
 
 O efeito de um fator é definido como a mudança no valor observado da variável resposta quando o muda-se o nível do fator. Geralmente chamado de efeito principal, refere-se aos fatores primários de interesse no experimento.
 
-Considerado como o esquema fatorial mais simples, envolvendo somente dois fatores A e B, tendo cada um desses dois fatores um número de níveis a ser testado, consideramos $a$ níveis para o fator A e $b$ níveis para o fator B. Assim, termos $ab$ comibinações no experimento. Nesse tipo de experimento, podemos testar:
+Considerado como o esquema fatorial mais simples, envolvendo somente dois fatores A e B, tendo cada um desses dois fatores um número de níveis a ser testado, consideramos $a$ níveis para o fator A e $b$ níveis para o fator B. Assim, termos $ab$ combinações no experimento. Nesse tipo de experimento, podemos testar:
 
   - a resposta é alterada significativamente quando o nível do fator A é alterado;
   - a resposta é alterada significativamente quando o nível do fator B é alterado;
@@ -69,28 +69,28 @@ knitr::include_graphics("./dados/modelomatricia2x2.png")
 
 # Fatorial fracionado
 
-A partir do esquema fatorial, temos o caso particular de experimentos no esquema fatorial fracionado. Este desenho experimental têm grande utilidade nos experimentos que antecedem ao experimento final, como no caso da seleção de fatores e de seus níveis (screening desing) e são exaustivamente utilizados no desenvolvimento e na otimização de processos e produtos. 
+A partir do esquema fatorial, temos o caso particular de experimentos no esquema fatorial fracionado. Este desenho experimental tem grande utilidade nos experimentos que antecedem ao experimento final, como no caso da seleção de fatores e de seus níveis (screening desing) e são exaustivamente utilizados no desenvolvimento e na otimização de processos e produtos. 
 
-São casos em que o pesquisador considera como desprezíveis os efeitos das interações de segunda ordem e superiores, ou seja, somente as informações de interesse são sobre os efeitos princiais e interações de primeira ordem, o que podem ser obtidas através de uma fração de um fatorial completo.
+São casos em que o pesquisador considera como desprezíveis os efeitos das interações de segunda ordem e superiores, ou seja, somente as informações de interesse são sobre os efeitos principais e interações de primeira ordem, o que podem ser obtidas através de uma fração de um fatorial completo.
 
-Um dos principais uso deste delineamento são em experimentos de triagem, experimentos nos quais muitos fatores são considerados e o objetivo é identifica aqueles fatores (se houver) que tenham grandes efeitos. Os experimentos de triagem geralmente são realizados nos estágios iniciais de um projeto, quando muitos dos fatores inicialmente considerados prováveis têm pouco ou nenhum efeito sobre a resposta. Os fatoes identiicados como importantes são então investigados mais detalhadamente em experimetnos subsequentes.
+Um dos principais uso deste delineamento são em experimentos de triagem, experimentos nos quais muitos fatores são considerados e o objetivo é identifica aqueles fatores (se houver) que tenham grandes efeitos. Os experimentos de triagem geralmente são realizados nos estágios iniciais de um projeto, quando muitos dos fatores inicialmente considerados prováveis têm pouco ou nenhum efeito sobre a resposta. Os fatores identificados como importantes são então investigados mais detalhadamente em experimentos subsequentes.
 
-O uso bem-sucedido de experimentos fatoriais fracionários é baseado em três ideias-chave: 
+O uso bem-sucedido de experimentos fatoriais fracionados é baseado em três ideias-chave: 
 
   1. **O princípio da esparsidade dos efeitos**:  Quando há várias variáveis, o sistema ou processo provavelmente será conduzido principalmente por alguns dos principais efeitos e interações de baixa ordem.  
-  1. **A propriedade de projeção**.  Os experimentos fatoriais fracionários podem ser projetados em experimentos mais fortes (maiores) no subconjunto de fatores significativos.  
-  1. **Experimentação sequencial**.  É possível combinar as execuções de dois (ou mais) fatoriais fracionários para montar sequencialmente um projeto maior para estimar os efeitos dos fatores e as interações de interesse.
+  1. **A propriedade de projeção**.  Os experimentos fatoriais fracionados podem ser projetados em experimentos mais fortes (maiores) no subconjunto de fatores significativos.  
+  1. **Experimentação sequencial**.  É possível combinar as execuções de dois (ou mais) fatoriais fracionados para montar sequencialmente um projeto maior para estimar os efeitos dos fatores e as interações de interesse.
 
 # Estrutura do modelo
 
-Segundo Montgomery (2012), o modelo estatístico que será apresentado pelo uso da relação de definição completa, funciona bem em projetos simples, com as frações regulares, no entanto não funciona tão bem em configurações, onde as frações sejam não regulares. E ainda, existem alguns fatroias fracionários que não possuem relação definidora. 
+Segundo Montgomery (2012), o modelo estatístico que será apresentado pelo uso da relação de definição completa, funciona bem em projetos simples, com as frações regulares, no entanto não funciona tão bem em configurações, onde as frações sejam não regulares. E ainda, existem alguns fatoriais fracionados que não possuem relação definidora. 
 
-Como os experimentos fatoriais fracionados podem ter a ocorrencia de confudimento por não trabalhar com todas as possíveis combinações, sendo assim, para apresentar o modelo estatístico será utilizado a estrutura de aliases
+Como os experimentos fatoriais fracionados podem ter a ocorrência de confudimento por não trabalhar com todas as possíveis combinações, sendo assim, para apresentar o modelo estatístico será utilizado a estrutura de aliases
 
 Assim, o método usa a representação do modelo polinomial ou de regressão do modelo, ou seja,
 
 $$ \boldsymbol{y} = \boldsymbol{X}_1 \boldsymbol{\beta}_1 + \boldsymbol{\epsilon}$$
-onde $\boldsymbol{y}$ é um vetor das respostas, $\boldsymbol{X}_1$ é uma matrix $nxp_1$ contendo a matriz de planejamento que pode ser expandida para a forma do modelo que o pesquisador deseja ajustar, $\boldsymbol{\beta}_1$ é um vetor $p_1 x1$ de parâmetros e $\boldsymbol{\epsilon}$ é um vetor $nx1$ de erros. A estimativa de mínimos quadrados de $\boldsymbol{\beta}_1$ é 
+onde $\boldsymbol{y}$ é um vetor das respostas, $\boldsymbol{X}_1$ é uma matriz $nxp_1$ contendo a matriz de planejamento que pode ser expandida para a forma do modelo que o pesquisador deseja ajustar, $\boldsymbol{\beta}_1$ é um vetor $p_1 x1$ de parâmetros e $\boldsymbol{\epsilon}$ é um vetor $nx1$ de erros. A estimativa de mínimos quadrados de $\boldsymbol{\beta}_1$ é 
 
 $$ \hat{\boldsymbol{\beta}_1} = (\boldsymbol{X}{'}_1\boldsymbol{X}_1)^{-1}\boldsymbol{X}{'}_1\boldsymbol{y}$$
 
@@ -101,9 +101,9 @@ onde $\boldsymbol{X}_2$ é uma matriz $nxp_2$ contendo variáveis adicionais que
 
 $$ E(\hat{\boldsymbol{\beta}_1}) = \boldsymbol{\beta}_1 + (\boldsymbol{X}{'}_1\boldsymbol{X}_1)^{-1}\boldsymbol{X}{'}_1\boldsymbol{X}_2\boldsymbol{\beta}_2 = \boldsymbol{\beta}_1 + \boldsymbol{A}\boldsymbol{\beta}_2$$
 
-$\boldsymbol{A}$ é chamada de matriz de aliase. Os elemtnos desta matriz operão em $\boldsymbol{\beta}_2$ indentificando as relações de aliase para os parâmetos no vetor $\boldsymbol{\beta}_1$.
+$\boldsymbol{A}$ é chamada de matriz de aliase. Os elementos desta matriz serão operados em $\boldsymbol{\beta}_2$ identificando as relações de aliase para os parâmetros no vetor $\boldsymbol{\beta}_1$.
 
-Para exepmlificar, suponha que em um experimento fatorial fracionado $2^{3-1}$ com a realação definidora $I = ABC$ ou $I = x_1x_2x_3$. O modelo que será ajustado terá somente a presença dos efeitos principais, ou seja
+Para exemplificar, suponha que em um experimento fatorial fracionado $2^{3-1}$ com a relação definidora $I = ABC$ ou $I = x_1x_2x_3$. O modelo que será ajustado terá somente a presença dos efeitos principais, ou seja
 
 $$y = \mu + \alpha x_1 + \gamma x_2 + \tau x_3 + \epsilon$$
 Na notação anterior
@@ -120,7 +120,7 @@ $$\boldsymbol{\beta}_1 = \begin{bmatrix}
 1 & 1 & 1 & 1
 \end{bmatrix}$$
 
-Agora vamos supor que o verdadeiro modelo contenha todas as interaçoes de seunga ordem dos fatores, desse modo,
+Agora vamos supor que o verdadeiro modelo contenha todas as interações de segunda ordem dos fatores, desse modo,
 
 $$ y = \mu + \alpha x_1 + \gamma x_2 + \tau x_3 + (\alpha\gamma) x_1x_2 + (\alpha\tau) x_1x_3 + (\gamma\tau) x_2x_3+ \epsilon$$
 Assim, nosso $\boldsymbol{\beta}_2$ e nossa $\boldsymbol{X}_2$ serão,
@@ -197,7 +197,7 @@ $$ E(\boldsymbol{\hat{\boldsymbol{\beta}_1}}) = \boldsymbol{\beta}_1 + \boldsymb
 \tau + (\alpha\gamma)
 \end{bmatrix}$$
 
-Dessa formar, podemos perceber que cada um dos fatores principais está associado a uma das interaçoes de segunda ordem. Perceba que cada uma das linhas da matriz de aliase representa um dos fatores de $\boldsymbol{\beta}_1$ e cada uma das colunas respresenta um dos fatores de $\boldsymbol{\beta}_2$. Mesmo sendo um exemplo simples, esse método pode ser aplicado a projetos mais complexos.
+Dessa formar, podemos perceber que cada um dos fatores principais está associado a uma das interações de segunda ordem. Perceba que cada uma das linhas da matriz de aliase representa um dos fatores de $\boldsymbol{\beta}_1$ e cada uma das colunas representa um dos fatores de $\boldsymbol{\beta}_2$. Mesmo sendo um exemplo simples, esse método pode ser aplicado a projetos mais complexos.
 
 # Exemplo 1: Fatorial $2^{4-1}$
 
@@ -232,9 +232,9 @@ Entretanto, uma quarta variável, $x_4$, precisa ser introduzida neste planejame
 | 7     | - | + | + | -       |
 | 8     | + | + | + | +       |
 
-: Matriz de planejamento para experimento fracionário
+: Matriz de planejamento para experimento fracionado
 
-E a matriz de cáculo dos efeitos para um planejamento como este é dado por:
+E a matriz de cálculo dos efeitos para um planejamento como este é dado por:
 
 | Teste |  I  |  1  |  2  |  3  |  4 | 12  | 13  | 14  | 23  | 24  | 34  | 123 | 124 | 134 | 234 | 1234 |
 | :---: | :-: | :-: | :-: | :-: | :-:| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :--: |
@@ -247,7 +247,7 @@ E a matriz de cáculo dos efeitos para um planejamento como este é dado por:
 | 7     | +   | -   | +   | +   | -  | -   | -   | +   | +   | -   | -   | -   | +   | +   | -   | +    |
 | 8     | +   | +   | +   | +   | +  | +   | +   | +   | +   | +   | +   | +   | +   | +   | +   | +    |
 
-: Matriz de cálculo, experimento fracionário $2^{4-1}$.
+: Matriz de cálculo, experimento fracionado $2^{4-1}$.
 
 Examinando a matriz de cálculo, podemos perceber que muitas das
 colunas são idênticas. Das 16 colunas, apenas 8 são únicas, ou seja, a
@@ -300,15 +300,14 @@ knitr::include_graphics("./dados/resolucao.png")
 
 **Resolução III ** Não há associação entre efeitos principais . Os efeitos principais estão associados as interações de primeira ordem (interações de dois fatores) . As interações de primeira ordem estão associadas entre si. Pouco útil na prática.
 
-**Resolução IV** Não há associações entre os efeitos principais e interações de primeira orden. As interações de primeira ordem estão associadas entre si.
+**Resolução IV** Não há associações entre os efeitos principais e interações de primeira ordem. As interações de primeira ordem estão associadas entre si.
 
-**Resoluçção V**  Não há associação entre efeitos principais. Não há associações entre efeitos principais e interações de preimeira ordem.
+**Resolução V**  Não há associação entre efeitos principais. Não há associações entre efeitos principais e interações de primeira ordem.
 
 
 # Exemplo 2: Fatorial $2^{6-2}$
 
-Exemplo 14-9, Montgomery (EAPE): encolhimento excessivo em peças de moldagem por injeção. Analisando 6 fatores em um experimento fatorial fracionado $2^{6-2}$, foram realizadas 16 corridas para estes seis fatores. O planejamento foi construído escrevendo um planejamento
-básico $2^4$ nos fatores $A$, $B$, $C$, e $D$, e então estabelecendo $E = ABC$, e $F = BCD$, pois as relações de definição escolhidas foram $I = ABCE$, e $I = BCDF$. O objetivo do planejamento era identificar os fatores que causavam o encolhimento excessivo, portanto as combinações de fatores que gerem **menores** valores da variável resposta (encolhimento) deverão ser utilizadas no processo de fabricação. 
+Montgomery (2017) apresenta em exemplo sobre o encolhimento excessivo em peças de moldagem por injeção. trata-se de 6 fatores em um experimento fatorial fracionado $2^{6-2}$, onde foram realizadas 16 corridas para estes seis fatores. As relações de definição escolhidas foram escolhidas previamente, sendo $I = ABCE$, e $I = BCDF$. A partir destes geradores, podemos escrever os fatores da seguinte forma: $A$, $B$, $C$, e $D$, e então estabelecendo $E = ABC$, e $F = BCD$. O objetivo do planejamento é identificar os fatores que causavam o encolhimento excessivo, ou seja, combinações de fatores que gerem **menores** valores da variável resposta (encolhimento).
 
 ```{r}
 library(tidyverse)
@@ -319,15 +318,14 @@ tab_dados <- read_csv2("dados/exemplo_fr6-2.csv")
 tab_dados
 ```
 
-Para montarmos a matriz efeitos codificada, podemos utilizar a função `moden.matrix` indicando a formula de interação completa entre todos os fatores.
+Para montarmos a matriz efeitos codificada, podemos utilizar a função `moden.matrix` indicando a fórmula de interação completa entre todos os fatores.
 
 ```{r}
 tab_matriz_completa <- model.matrix(~A * B * C * D * E * F, data = tab_dados)
 
 head(tab_matriz_completa)
 ```
-
-Como foi demonstrado a cima, a matriz de efeitos parametrizada com a geradora $E = ABC$, e $F = BCD$ contém diversos fatores que estão confundidos, por isso devemos selecionar dessa tabela apenas os efeitos que sejam únicos. O bloco de código abaixo mostra os efeitos que se repetem em toda a matriz. Como exemplo, mostramos apenas os 3 primeiros resultados.
+Ao construir a matriz de efeitos com a geradora $E = ABC$, e $F = BCD$, vários fatores terminam com efeitos iguais, permitindo simplificar a matriz de efeitos e selecionar apenas as combinações únicas. O bloco de código abaixo mostra os efeitos que se repetem em toda a matriz. Como exemplo, mostramos apenas os 3 primeiros resultados.
 
 ```{r}
 vec_efeitos <- attr(tab_matriz_completa, "dimnames")[[2]]
@@ -350,7 +348,7 @@ for (i in seq_along(vec_efeitos)) {
 head(lst_out, n = 3)
 ```
 
-Considerando apenas os efeitos unicos, temos a matriz a seguir:
+Considerando apenas os efeitos únicos, temos a matriz a seguir:
 
 ```{r}
 tab_matriz_frac <- tab_matriz_completa %>% 
@@ -360,7 +358,7 @@ tab_matriz_frac <- tab_matriz_completa %>%
 tab_matriz_frac
 ```
 
-A estimativa dos efeitos é feita pela multiplicação da transpoda da matriz de sinais pelo vetor de resposta seguido da divisão pelo numero de valores que compôem a o contraste.
+A estimativa dos efeitos é feita pela multiplicação da transposta da matriz de sinais pelo vetor de resposta seguido da divisão pelo número de experimentos em cada nível. 
 
 ```{r}
 mat_contrastes <- t(tab_matriz_frac[, -1]) %*% tab_dados$y
@@ -376,7 +374,7 @@ mat_efeitos <- {mat_contrastes/(r * 2^(k - 1))} %>%
 
 mat_efeitos
 ```
-Pelo gráfico QQPlot podemos ver quais efeitos podem ser significativos.
+Pelo gráfico QQPlot podemos ver quais efeitos podem ser significativos. Desta forma, podemos propor um modelo apenas com os fatores com mais efeito. Pelo fato do experimento não ter repetição em cada corrida (combinação) não é possível ajustar um modelo completo, pois não é graus de liberdade para tal.
 
 ```{r}
 mat_efeitos %>% 
@@ -386,14 +384,8 @@ mat_efeitos %>%
   stat_qq_line() +
   theme_bw()
 ```
-Ajustando um modelo com apenas os efeitos
 
-```{r}
-lm(y ~ .^2, data = tab_dados) %>% 
-  summary()
-```
-
-Como vimos no gráfico anterior, os efeitos A, B, e as interações AB, AD, e ACD parecem importantes, então podemos ajustar o modelo
+Como vimos no gráfico anterior, os efeitos A, B, e as interações AB, AD, e ACD parecem importantes, então podemos ajustar o modelo. mesmo que os efeitos principais `C` e `D` se mostrando não significativo, para mantermos um modelo hierárquico.
 
 ```{r}
 m0 <- lm(y ~ A + B + C + D + A:B + A:D + A:C:D, data = tab_dados)
@@ -401,7 +393,7 @@ m0 <- lm(y ~ A + B + C + D + A:B + A:D + A:C:D, data = tab_dados)
 anova(m0)
 ```
 
-Como as interações AD e ACD requerem a permanencia dos efeitos principais (não significativos) C e D, podemos ajustar um modelo mais simples, sem estes termos.
+Podemos ajustar um modelo mais simples apenas com os efeitos principais significativos e sua interação.
 
 ```{r}
 m1 <- lm(y ~ A + B + A:B, data = tab_dados)
@@ -409,14 +401,13 @@ m1 <- lm(y ~ A + B + A:B, data = tab_dados)
 anova(m1)
 ```
 
-E verificar se existe diferença com o nosso modelo inicial através de um TRV. Se a diferença for significativa, significa que não podemos ignorar os efeitos de AD e ACD (lembre que C e D precisam ser mantidos, mesmo que não significativos, pelo princípio da
-marginalidade)
+Agora, utilizando a função `anova()` para validar se o modelo simples tem diferença significativa em relação ao modelo completo.
 
 ```{r}
 anova(m1, m0)
 ```
 
-Como o resultado é que existe diferença, devemos ficar com o modelo com mais parâmetros (m0)
+O resultado do teste nos mostra que devemos rejeitar $H_0$ e assumir que os modelos são diferentes, ou seja, o modelo simples não é estatisticamente igual o modelo completo, e por isso  devemos ficar com o modelo com mais parâmetros (m0)
 
 ```{r}
 residuals(m0) %>% 
@@ -427,16 +418,7 @@ residuals(m0) %>%
   theme_bw()
 ```
 
-Esse exemplo ilustra a importância do fatorial fracionado. Se tivessemos
-feito o experimento $2^6 = 64$ corridas, poderíamos estimar interações
-de ordens altas, mas com a fração $1/4$, de 16 corridas, verificamos que
-só 2 efeitos principais, duas interações de segunda ordem e uma de
-terceira ordem são importantes. Com economia, selecionamos de 6
-variáveis, apenas 2 principais, que são importantes, e que agora serão
-investigadas com maior rigor em experimento mais elaborados
-subsequentes. O fundamento do planejamento de experimentos é exatamente
-esse: obter maior informação possível, tirar o máximo de vantagem e da
-forma mais econômica, ou seja, ser eficiente na investigação.
+Esse exemplo ilustra a importância do fatorial fracionado. Se tivéssemos feito o experimento $2^6 = 64$ corridas, poderíamos estimar interações de ordens altas, mas com a fração $1/4$, de 16 corridas, verificamos que só 2 efeitos principais, duas interações de segunda ordem e uma de terceira ordem são importantes. Com economia, selecionamos de 6 variáveis, apenas 2 principais, que são importantes, e que agora serão investigadas com maior rigor em experimento mais elaborados subsequentes.
 
 
 # Referências bibliográficas

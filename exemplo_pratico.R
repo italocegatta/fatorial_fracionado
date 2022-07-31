@@ -4,15 +4,15 @@
 library(tidyverse)
 library(ggrepel)
 
-# Exemplo 14-9, Montgomery (EAPE): encolhimento excessivo em peças de moldagem por injeção. 
-# Analisando 6 fatores em um experimento fatorial fracionado $2^{6-2}$, 
-# foram realizadas 16 corridas para estes seis fatores. O planejamento foi construído 
-# escrevendo um planejamento básico $2^4$ nos fatores $A$, $B$, $C$, e $D$, 
-# e então estabelecendo $E = ABC$, e $F = BCD$, pois as relações de definição escolhidas
-# foram $I = ABCE$, e $I = BCDF$. O objetivo do planejamento era identificar os fatores
-# que causavam o encolhimento excessivo, portanto as combinações de fatores que gerem 
-# **menores** valores da variável resposta (encolhimento) deverão ser utilizadas no processo 
-# de fabricação. 
+# Montgomery (2017) apresenta em exemplo sobre o encolhimento excessivo em peças
+# de moldagem por injeção. trata-se de 6 fatores em um experimento fatorial 
+# fracionado $2^{6-2}$, onde foram realizadas 16 corridas para estes seis fatores.
+# As relações de definição escolhidas foram escolhidas previamente, sendo $I = ABCE$, 
+# e $I = BCDF$. A partir destes geradores,podemos escrever os fatores da seguinte 
+# forma: $A$, $B$, $C$, e $D$, e então estabelecendo $E = ABC$, e $F = BCD$. 
+# O objetivo do planejamento é identificar os fatores que causavam o encolhimento 
+# excessivo, ou seja, combinações de fatores que gerem **menores** valores da
+# variável resposta (encolhimento).
 
 
 # input -------------------------------------------------------------------
@@ -70,7 +70,7 @@ mat_efeitos <- {mat_contrastes/(r * 2^(k - 1))} %>%
 mat_efeitos %>% 
   ggplot(aes(sample = V1)) +
   geom_qq() + 
-  geom_text_repel(label = arrange(mat_efeitos, V1)$efeito, stat="qq") +
+  geom_text_repel(label = arrange(mat_efeitos, V1)$efeito, stat = "qq") +
   stat_qq_line() +
   theme_bw()
 
@@ -96,15 +96,3 @@ residuals(m0) %>%
   geom_qq() + 
   stat_qq_line() +
   theme_bw()
-
-
-# Esse exemplo ilustra a importância do fatorial fracionado. Se tivessemos
-# feito o experimento $2^6 = 64$ corridas, poderíamos estimar interações
-# de ordens altas, mas com a fração $1/4$, de 16 corridas, verificamos que
-# só 2 efeitos principais, duas interações de segunda ordem e uma de
-# terceira ordem são importantes. Com economia, selecionamos de 6
-# variáveis, apenas 2 principais, que são importantes, e que agora serão
-# investigadas com maior rigor em experimento mais elaborados
-# subsequentes. O fundamento do planejamento de experimentos é exatamente
-# esse: obter maior informação possível, tirar o máximo de vantagem e da
-# forma mais econômica, ou seja, ser eficiente na investigação.
